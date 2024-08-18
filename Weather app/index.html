@@ -44,10 +44,10 @@
     <body>
     
     <div class="card">
-        <div class="search">
+        <form id="searchForm" class="search">
             <input type="text" placeholder="enter city name" spellcheck="false">
-            <button><img src="images/search.png"></button>
-        </div>
+            <button type="submit"><img src="images/search.png"></button>
+        </form>
        
         <div class="error">
             <p> Invalid City Name</p>
@@ -124,7 +124,12 @@
 
         }
 
-        searchBtn.addEventListener("click",()=>{
+        // searchBtn.addEventListener("click",()=>{
+        //     checkWeather(searchBox.value);
+        // })
+
+        searchForm.addEventListener("submit",(e)=>{
+            e.preventDefault();
             checkWeather(searchBox.value);
         })
     // checkWeather();
